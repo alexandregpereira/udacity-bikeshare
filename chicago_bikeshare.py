@@ -125,9 +125,19 @@ plt.show(block=True)
 
 input("Press Enter to continue...")
 # TASK 7
-# TODO: Plot a similar graph for user_types. Make sure the legend is correct.
+# Plot a similar graph for user_types. Make sure the legend is correct.
 print("\nTASK 7: Check the chart!")
 
+user_type_list = helper.column_to_list(data_list, "User Type")
+types = helper.get_user_types(data_list)
+quantity = helper.count_user_type(data_list)
+y_pos = list(range(len(types)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantity')
+plt.xlabel('User type')
+plt.xticks(y_pos, types)
+plt.title('Quantity by User Type')
+plt.show(block=True)
 
 input("Press Enter to continue...")
 # TASK 8
@@ -135,7 +145,7 @@ input("Press Enter to continue...")
 male, female = helper.count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
-answer = "Type your answer here."
+answer = input("Type your answer here.\n")
 print("Answer:", answer)
 
 # ------------ DO NOT CHANGE ANY CODE HERE ------------

@@ -204,21 +204,14 @@ input("Press Enter to continue...")
 
 input("Press Enter to continue...")
 # TASK 12 - Challenge! (Optional)
-# TODO: Create a function to count user types without hardcoding the types
+# Create a function to count user types without hardcoding the types
 # so we can use this function with a different kind of data.
-print("Will you face it?")
-answer = "no"
-
-def count_items(column_list):
-    item_types = []
-    count_items = []
-    return item_types, count_items
-
+answer = input("Will you face it?\n")
 
 if answer == "yes":
     # ------------ DO NOT CHANGE ANY CODE HERE ------------
     column_list = helper.column_to_list(data_list, "Gender")
-    types, counts = count_items(column_list)
+    types, counts = helper.count_items(column_list)
     print("\nTASK 11: Printing results for count_items()")
     print("Types:", types, "Counts:", counts)
     assert len(types) == 3, "TASK 11: There are 3 types of gender!"

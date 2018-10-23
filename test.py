@@ -5,5 +5,6 @@ with open("chicago.csv", "r") as file_read:
     data_list = [{key: value for key, value in row.items()}
         for row in csv.DictReader(file_read, skipinitialspace=True)]
 
-user_types = set(helper.column_to_list(data_list, "Start Station"))
-print(len(user_types))
+column_list = helper.column_to_list(data_list, "Gender")
+types, counts = helper.count_items(column_list)
+print(sum(counts))

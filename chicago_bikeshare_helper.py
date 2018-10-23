@@ -121,3 +121,11 @@ def calculate_median(sorted_int_list):
     else:
         middle = int(length / 2)
         return sorted_int_list[middle]
+
+def count_items(column_list):
+    """
+    A function to count user types
+    """
+    item_types = set(column_list)
+    count_items = [len(column_list)]
+    return item_types, count_items

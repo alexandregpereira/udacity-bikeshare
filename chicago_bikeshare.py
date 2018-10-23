@@ -155,7 +155,7 @@ assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
 input("Press Enter to continue...")
 # Let's work with the trip_duration now. We cant get some values from it.
 # TASK 9
-# TODO: Find the Minimum, Maximum, Mean and Median trip duration.
+# Find the Minimum, Maximum, Mean and Median trip duration.
 # You should not use ready functions to do that, like max() or min().
 trip_duration_list = helper.column_to_list_sorted_int(data_list, "Trip Duration")
 min_trip = trip_duration_list[0]
@@ -177,8 +177,8 @@ assert round(median_trip) == 670, "TASK 9: median_trip with wrong result!"
 input("Press Enter to continue...")
 # TASK 10
 # Gender is easy because usually only have a few options. How about start_stations? How many options does it have?
-# TODO: Check types how many start_stations do we have using set()
-user_types = set()
+# Check types how many start_stations do we have using set()
+user_types = set(helper.column_to_list(data_list, "Start Station"))
 
 print("\nTASK 10: Printing start stations:")
 print(len(user_types))

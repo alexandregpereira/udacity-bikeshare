@@ -141,7 +141,7 @@ plt.show(block=True)
 
 input("Press Enter to continue...")
 # TASK 8
-# TODO: Answer the following question
+# Answer the following question
 male, female = helper.count_gender(data_list)
 print("\nTASK 8: Why the following condition is False?")
 print("male + female == len(data_list):", male + female == len(data_list))
@@ -157,11 +157,11 @@ input("Press Enter to continue...")
 # TASK 9
 # TODO: Find the Minimum, Maximum, Mean and Median trip duration.
 # You should not use ready functions to do that, like max() or min().
-trip_duration_list = helper.column_to_list(data_list, "Trip Duration")
-min_trip = 0.
-max_trip = 0.
-mean_trip = 0.
-median_trip = 0.
+trip_duration_list = helper.column_to_list_sorted_int(data_list, "Trip Duration")
+min_trip = trip_duration_list[0]
+max_trip = trip_duration_list[-1]
+mean_trip = helper.calculate_mean(trip_duration_list)
+median_trip = helper.calculate_median(trip_duration_list)
 
 
 print("\nTASK 9: Printing the min, max, mean and median")

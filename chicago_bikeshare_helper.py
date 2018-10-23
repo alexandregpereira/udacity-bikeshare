@@ -1,9 +1,9 @@
 def print_data_list(data_list, start_index, stop_index):
-    for row in data_list[:stop_index]:
+    for row in data_list[start_index:stop_index]:
         print(row)
 
 def print_data_list_gender(data_list, start_index, stop_index):
-    for row in data_list[:stop_index]:
+    for row in data_list[start_index:stop_index]:
         gender = row['Gender']
         print(gender if gender else "Unknown")
 
@@ -41,3 +41,20 @@ def count_user_type(data_list):
 def get_user_types(data_list):
     user_type_list = set(column_to_list(data_list, "User Type"))
     return user_type_list
+
+def column_to_list_sorted_int(data_list, key):
+    column_list = column_to_list(data_list, key)
+    column_list.sort(key=int)
+    return [int(item) for item in column_list]
+
+def calculate_mean(int_list):
+    return round(sum(int_list) / len(int_list))
+
+def calculate_median(sorted_int_list):
+    length = len(sorted_int_list)
+    if length % 2 == 0:
+        middle = int(length / 2)
+        return (sorted_int_list[middle - 1] + sorted_int_list[middle]) / 2
+    else:
+        middle = int(length / 2)
+        return sorted_int_list[middle]
